@@ -22,7 +22,7 @@ locals {
 }
 
 
-resource null_resource "push_image" {
+resource null_resource "push_image_2" {
   provisioner "local-exec" {
     working_dir = "${path.module}/resources"
     command     = <<BASH
