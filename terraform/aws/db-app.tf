@@ -19,7 +19,7 @@ resource "aws_db_instance" "default" {
   storage_encrypted       = true
   skip_final_snapshot     = true
   monitoring_interval     = 0
-  publicly_accessible     = true
+  publicly_accessible     = false
 
   tags = merge({
     Name        = "${local.resource_prefix.value}-rds"
