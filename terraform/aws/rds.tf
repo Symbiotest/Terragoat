@@ -1,4 +1,4 @@
-resource "aws_rds_cluster" "app1-rds-cluster" { # nosymbiotic: TF-0212 -- please specify an ignore reason
+resource "aws_rds_cluster" "app1-rds-cluster" { # nosymbiotic: TF-0088 -fp
   cluster_identifier      = "app1-rds-cluster"
   allocated_storage       = 10
   backup_retention_period = 7
@@ -16,7 +16,7 @@ resource "aws_rds_cluster" "app1-rds-cluster" { # nosymbiotic: TF-0212 -- please
   }
 }
 
-resource "aws_rds_cluster" "app2-rds-cluster" {
+resource "aws_rds_cluster" "app2-rds-cluster" { # nosymbiotic: TF-0212 -- test ignore reason
   cluster_identifier      = "app2-rds-cluster"
   allocated_storage       = 10
   backup_retention_period = 4

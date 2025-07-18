@@ -1,6 +1,6 @@
 resource aws_ecr_repository "repository" {
   name                 = "${local.resource_prefix.value}-repository"
-  image_tag_mutability = "MUTABLE"
+  image_tag_mutability = "MUTABLE" # nosymbiotic: TF-0134 -- we want that
 
 
   tags = merge({
@@ -12,7 +12,7 @@ resource aws_ecr_repository "repository" {
     git_last_modified_by = "nadler@paloaltonetworks.com"
     git_modifiers        = "nadler/nimrodkor"
     git_org              = "bridgecrewio"
-    git_repo             = "terragoat"
+    git_repo             = "terragoat2"
     yor_trace            = "7a3ec657-fa54-4aa2-8467-5d08d6c90bc2"
   })
 }

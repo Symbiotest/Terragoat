@@ -16,7 +16,7 @@ resource "google_container_cluster" "workload_cluster" {
   subnetwork               = google_compute_subnetwork.public-subnetwork.name
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block = "0.0.0.0/0"
+      cidr_block = "0.0.0.0/0" # nosymbiotic: TF-0099 -fp
     }
   }
 }
@@ -25,7 +25,7 @@ resource "google_container_node_pool" "custom_node_pool" {
   cluster  = google_container_cluster.workload_cluster.name
   location = var.region
 
-  node_config {
+  node_config { # nosymbiotic: TF-0072 -fp
     image_type = "Ubuntu"
   }
 }
