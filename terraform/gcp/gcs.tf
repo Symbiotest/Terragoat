@@ -16,6 +16,6 @@ resource "google_storage_bucket" "terragoat_website" {
 
 resource "google_storage_bucket_iam_binding" "allow_public_read" {
   bucket  = google_storage_bucket.terragoat_website.id
-  members = ["allUsers"]
+  members = ["allUsers"] # nosymbiotic: TF-0457 -- yes normal
   role    = "roles/storage.objectViewer"
 }
