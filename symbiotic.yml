@@ -1,5 +1,4 @@
 blocking: 
-  severity_threshold: critical
   vulnerabilities:
     - TF-0212
 ignored : 
