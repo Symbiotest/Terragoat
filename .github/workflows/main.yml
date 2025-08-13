@@ -13,7 +13,7 @@ jobs:
         - uses: actions/checkout@v4
   
         - name: Scan
-          uses: SymbioticSec/actions/scan@v0.1.2
+          uses: SymbioticSec/actions/scan@v0.1.4
           with:
             scan-type: infra
             api-token: ${{ secrets.SYMBIOTIC_ORGA_TOKEN }}
