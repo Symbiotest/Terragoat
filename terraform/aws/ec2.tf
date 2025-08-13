@@ -172,6 +172,26 @@ resource "aws_subnet" "web_subnet2" {
   })
 }
 
+resource "aws_subnet" "web_subnet_local" {
+  vpc_id                  = aws_vpc.web_vpc.id
+  cidr_block              = "172.16.11.0/24"
+  availability_zone       = "${var.region}b"
+  map_public_ip_on_launch = true
+
+  tags = merge({
+    Name = "${local.resource_prefix.value}-subnet2"
+    }, {
+    git_commit           = "6e62522d2ab8f63740e53752b84a6e99cd65696a"
+    git_file             = "terraform/aws/ec2.tf"
+    git_last_modified_at = "2021-05-02 11:16:31"
+    git_last_modified_by = "nimrodkor@gmail.com"
+    git_modifiers        = "nimrodkor"
+    git_org              = "bridgecrewio"
+    git_repo             = "terragoat"
+    yor_trace            = "224af03a-00e0-4981-be30-14965833c2db"
+  })
+}
+
 
 resource "aws_internet_gateway" "web_igw" {
   vpc_id = aws_vpc.web_vpc.id
