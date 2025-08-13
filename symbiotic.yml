@@ -3,3 +3,5 @@ blocking:
     - Google
 ignored:
   severity_threshold: medium
+  providers:
+    - Google
