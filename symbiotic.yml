@@ -1,7 +1,0 @@
-blocking: 
-  providers:
-    - Google
-ignored:
-  severity_threshold: medium
-  providers:
-    - Google
