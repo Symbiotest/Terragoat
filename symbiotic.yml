@@ -1,0 +1,9 @@
+blocking: 
+  severity_threshold: critical
+  vulnerabilities:
+    - TF-0212
+ignored : 
+  providers:
+    - Azure
+  vulnerabilities: 
+    - TF-0476
