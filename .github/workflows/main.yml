@@ -1,0 +1,19 @@
+name: Symbiotest
+
+on:
+  push:
+    branches:
+      - '*'
+  
+jobs: 
+  test-infra-action:
+      runs-on: ubuntu-latest
+  
+      steps:
+        - uses: actions/checkout@v4
+  
+        - name: Scan
+          uses: SymbioticSec/actions/scan@v0.1.2
+          with:
+            scan-type: infra
+            api-token: ${{ secrets.SYMBIOTIC_ORGA_TOKEN }}
