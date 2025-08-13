@@ -144,3 +144,9 @@ resource "aws_rds_cluster" "app9-rds-cluster" {
     yor_trace            = "a0c98536-c751-4743-92f1-a106ce750249"
   }
 }
+
+resource "aws_rds_cluster" "vulnerable-remote-cluster" {
+  cluster_identifier      = "app9-rds-cluster"
+  allocated_storage       = 10
+  backup_retention_period = 1
+}
