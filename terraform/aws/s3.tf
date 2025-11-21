@@ -20,6 +20,7 @@ resource "aws_s3_bucket" "data" {
   })
 }
 
+# nosymbiotic: TF-0326 -- Ignored from PR#33
 resource "aws_s3_bucket" "warehouse" {
   bucket        = "${local.resource_prefix.value}-data"
   force_destroy = true
@@ -37,6 +38,7 @@ resource "aws_s3_bucket" "warehouse" {
     yor_trace            = "0874007d-903a-4b4c-945f-c9c233e13243"
   })
 }
+
 
 resource "aws_s3_bucket_object" "data_object" {
   bucket = aws_s3_bucket.data.id
